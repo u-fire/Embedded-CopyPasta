@@ -1,0 +1,10 @@
+{
+    "board": "*",
+    "name": "Serial Print: Simple Serial.println for each sensor",
+    "dependencies": [],
+    "include": [],
+    "constructor": [],
+    "setup": [],
+    "loop": [],
+    "values": []
+}

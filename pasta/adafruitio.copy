@@ -1,0 +1,20 @@
+{
+    "board": "ESP32",
+    "name": "AdafruitIO: Storage and dashboards",
+    "dependencies": [
+        "adafruit/Adafruit IO Arduino@^4.2.7"
+    ],
+    "include": [
+        "#include <AdafruitIO_WiFi.h>"
+    ],
+    "constructor": [
+        "#define IO_USERNAME \"your_username\"",
+        "#define IO_KEY \"your_key\"",
+        "#define WIFI_SSID \"your_ssid\"",
+        "#define WIFI_PASS \"your_pass\"",
+        "AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);"
+    ],
+    "setup": [],
+    "loop": ["io.run();"],
+    "values": []
+}

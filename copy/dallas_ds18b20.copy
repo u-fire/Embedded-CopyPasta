@@ -1,0 +1,29 @@
+{
+    "version": "3.11.0",
+    "name": "Dallas DS18B20",
+    "dependencies": [
+        "milesburton/DallasTemperature@^3.11.0",
+        "paulstoffregen/OneWire@^2.3.7"
+    ],
+    "include": [
+        "#include <OneWire.h>",
+        "#include <DallasTemperature.h>"
+    ],
+    "constructor": [
+        "OneWire oneWire(/* signal pin connected to MCU */ 2);",
+        "DallasTemperature ds18b20(&oneWire);"
+    ],
+    "setup": [
+        "ds18b20.begin();"
+    ],
+    "loop": [
+        "ds18b20.requestTemperatures();",
+        "float tempC = ds18b20.getTempCByIndex(0);"
+    ],
+    "values": [
+        {
+            "value": "tempC",
+            "unit": "tempC"
+        }
+    ]
+}

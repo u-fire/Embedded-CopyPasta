@@ -1,0 +1,26 @@
+{
+    "version": "2.0.1",
+    "name": "Microfire_Mod-pH",
+    "dependencies": [
+        "microfire/Microfire Mod-pH@^2.0.1"
+    ],
+    "include": [
+        "#include <Microfire_Mod-pH.h>"
+    ],
+    "constructor": [
+        "Microfire::Mod_pH::i2c ph;"
+    ],
+    "setup": [
+        "ph.begin();"
+    ],
+    "loop": [
+        "ph.measurepH(/* temperature in C */);"
+    ],
+    "values": [
+        {
+            "value": "ph.pH",
+            "unit": "pH",
+            "required": "temperature"
+        }
+    ]
+}

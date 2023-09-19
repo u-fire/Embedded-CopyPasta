@@ -1,0 +1,33 @@
+{
+    "version": "1.0.0",
+    "name": "Microfire_SHT3x",
+    "dependencies": [
+        "u-fire/Microfire_SHT3x@^1.0.0"
+    ],
+    "include": [
+        "#include <Microfire_SHT3x.h>"
+    ],
+    "constructor": [
+        "Microfire::SHT3x sht30;"
+    ],
+    "setup": [
+        "sht30.begin();"
+    ],
+    "loop": [
+        "sht30.measure();"
+    ],
+    "values": [
+        {
+            "value": "sht30.tempC",
+            "unit": "tempC"
+        },
+        {
+            "value": "sht30.RH",
+            "unit": "RH"
+        },
+        {
+            "value": "sht30.vpd_kPa",
+            "unit": "VPD kPa"
+        }
+    ]
+}

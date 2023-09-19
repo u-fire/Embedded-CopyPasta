@@ -1,0 +1,21 @@
+<% for(var i = 0; i < includes.length; ++i) {%>
+<%-includes[i]%><%}%>
+    
+<% for(var i = 0; i < constructors.length; ++i) 
+{%><%-constructors[i]%>
+<%}%>
+void setup()
+{
+    Serial.begin(9600);
+    <% for(var i = 0; i < setups.length; ++i) {%>
+    <%-setups[i]%><%}%>
+}
+
+void loop()
+{<% for(var i = 0; i < loops.length; ++i) {%>
+    <%-loops[i]%><%}%>
+<% for(var i = 0; i < values.length; ++i) {%>
+    Serial.println((String)"<%-units[i]%>: " + <%-values[i]%>);<%}%>
+
+    delay(1000);
+}

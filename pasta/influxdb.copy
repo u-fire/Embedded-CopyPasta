@@ -1,0 +1,19 @@
+{
+    "board": "ESP32",
+    "name": "InfluxDB: Send sensor measurements directly into your InfluxDB instance",
+    "dependencies": [
+        "tobiasschuerg/ESP8266 Influxdb@^3.13.1"
+    ],
+    "include": [
+        "#include <WiFiMulti.h>",
+        "#include <InfluxDbClient.h>"
+    ],
+    "constructor": [
+        "WiFiMulti wifiMulti;",
+        "InfluxDBClient client(INFLUXDB_URL, INFLUXDB_ORG, INFLUXDB_BUCKET, INFLUXDB_TOKEN);"
+
+    ],
+    "setup": [],
+    "loop": [],
+    "values": []
+}

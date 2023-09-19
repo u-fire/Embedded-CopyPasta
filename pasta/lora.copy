@@ -1,0 +1,15 @@
+{
+    "board": "*",
+    "name": "LoRa: Sends measurements through LoRa",
+    "dependencies": [
+        "sandeepmistry/LoRa@^0.8.0"
+    ],
+    "include": [
+        "#include <SPI.h>",
+        "#include <LoRa.h>"
+    ],
+    "constructor": [],
+    "setup": [],
+    "loop": [],
+    "values": []
+}

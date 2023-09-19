@@ -1,0 +1,27 @@
+{
+  "name": "ecp",
+  "version": "0.1.0",
+  "description": "",
+  "main": "ecp.js",
+  "bin": "ecp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Microfire LLC",
+  "license": "LGPL-3.0-or-later",
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "chalk": "^4.1.0",
+    "command-exists": "^1.2.9",
+    "commander": "^11.0.0",
+    "ejs": "^3.1.9",
+    "figlet": "^1.6.0",
+    "nodejs-file-downloader": "^4.12.1"
+  },
+  "pkg": {
+    "scripts": [],
+    "assets": [
+      "node_modules/figlet/fonts/Contessa.flf"
+    ]
+  }
+}

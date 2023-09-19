@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "name": "Microfire_Mod-EC",
+    "dependencies": [
+        "microfire/Microfire Mod-EC@^2.0.0"
+    ],
+    "include": [
+        "#include <Microfire_Mod-EC.h>"
+    ],
+    "constructor": [
+        "Microfire::Mod_EC::i2c ec;"
+    ],
+    "setup": [
+        "ec.begin();"
+    ],
+    "loop": [
+        "ec.measureEC(/* temperature in C */);"
+    ],
+    "values": [
+        {
+            "value": "ec.mS",
+            "unit": "mS"
+        },
+        {
+            "value": "ec.uS",
+            "unit": "uS"
+        }
+    ]
+}

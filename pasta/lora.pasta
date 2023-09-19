@@ -1,0 +1,25 @@
+// based on https://github.com/sandeepmistry/arduino-LoRa/blob/master/examples/LoRaSender/LoRaSender.ino 
+<% for(var i = 0; i < includes.length; ++i) {%>
+<%-includes[i]%><%}%>
+<% for(var i = 0; i < constructors.length; ++i) {%>
+<%-constructors[i]%><%}%>
+    
+void setup()
+{
+    Serial.begin(9600);
+    if (!LoRa.begin(915E6)) {
+        Serial.println("Starting LoRa failed!");
+        while (1);
+    }
+    <% for(var i = 0; i < setups.length; ++i) {%>
+    <%-setups[i]%><%}%>
+}
+
+void loop()
+{<% for(var i = 0; i < loops.length; ++i) {%>
+    <%-loops[i]%><%}%>
+
+    LoRa.beginPacket();<% for(var i = 0; i < values.length; ++i) {%>
+    LoRa.print(<%-values[i]%>);<%}%>
+    LoRa.endPacket();
+}
