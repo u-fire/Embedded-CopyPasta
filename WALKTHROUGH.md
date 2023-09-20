@@ -26,25 +26,6 @@ Assuming you have a working installation of Embedded CopyPasta 🍝, let's get s
     `values[0].values` is the name the variable we declared in our loop statement. `values[0].unit` doesn't have to be the same, but it will be used as a variable in the *.pasta* file, and it is descriptive and works well. Note, there are no semicolons, so `dht_humidity` can be used in something like `Serial.println(dht_humidity);`. 
 
     The entire `./copy/adafruit_dht.copy` file should look like this:
-    ```json
-    {
-        "version": "1.4.4",
-        "name": "DHT sensor library",
-        "dependencies": [
-            "adafruit/DHT sensor library@^1.4.4", 
-            "adafruit/Adafruit Unified Sensor @ ^1.1.4"],
-        "include": ["#include <DHT.h>"],
-        "constructor": ["DHT dht(/* pin number */ 2, /* sensor type */ DHT22);"],
-        "setup": ["dht.begin();"],
-        "loop": [
-            "float dht_humidity = dht.readHumidity();", 
-            "float dht_temperature = dht.readTemperature();"],
-        "values": [
-            {"value": "dht_humidity", "unit": "dht_humidity"},
-            {"value": "dht_temperature", "unit": "dht_temperature"}
-        ]
-    }
-```
 
 3. We can run this through with this command
 `ecp.js -c copy/adafruit_dht.copy -p pasta/print.pasta -o dht` and it should render this:
@@ -76,24 +57,7 @@ void loop()
     - changing `"board": "*",` isn't needed in this case, since nearly any board could have a LoRa module attached to it. But if this code was ESP32 specific, or RP2040 specific, that's where to note it. 
     - `name: ""` can be whatever you'd like to call this and will be used for display purposes.
     - the rest of the sections match the above *.copy* file. The only difference is that the contents of this file will always be placed at the top of the merged JSON arrays.
-    - The file will be:
-    ```json
-        {
-    "board": "*",
-    "name": "LoRa: Sends measurements through LoRa",
-    "dependencies": [
-        "sandeepmistry/LoRa@^0.8.0"
-    ],
-    "include": [
-        "#include <SPI.h>",
-        "#include <LoRa.h>"
-    ],
-    "constructor": [],
-    "setup": [],
-    "loop": [],
-    "values": []
-}
-```
+ 
 5. Copy `./pasta/print.pasta` to `./pasta/lora.pasta` and open it. 
 ```js
 // based on https://github.com/sandeepmistry/arduino-LoRa/blob/master/examples/LoRaSender/LoRaSender.ino 
