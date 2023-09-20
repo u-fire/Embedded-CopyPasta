@@ -1,0 +1,13 @@
+{
+    "version": "1.4.4",
+    "name": "DHT sensor library",
+    "dependencies": ["adafruit/DHT sensor library@^1.4.4", "adafruit/Adafruit Unified Sensor @ ^1.1.4"],
+    "include": ["#include <DHT.h>"],
+    "constructor": ["DHT dht(/* pin number */ 2, /* sensor type */ DHT22);"],
+    "setup": ["dht.begin();"],
+    "loop": ["float dht_humidity = dht.readHumidity();", "float dht_temperature = dht.readTemperature();"],
+    "values": [
+        {"value": "dht_humidity", "unit": "dht_humidity"},
+        {"value": "dht_temperature", "unit": "dht_temperature"}
+    ]
+}

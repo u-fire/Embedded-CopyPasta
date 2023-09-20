@@ -7,7 +7,7 @@
     ],
     "include": [
         "#include <OneWire.h>",
-        "#include <DallasTemperature.h>"
+        "#include <DallasTemperature.h>     // https://github.com/milesburton/Arduino-Temperature-Control-Library"
     ],
     "constructor": [
         "OneWire oneWire(/* signal pin connected to MCU */ 2);",
@@ -18,12 +18,12 @@
     ],
     "loop": [
         "ds18b20.requestTemperatures();",
-        "float tempC = ds18b20.getTempCByIndex(0);"
+        "float ds18b20_tempC = ds18b20.getTempCByIndex(0);"
     ],
     "values": [
         {
-            "value": "tempC",
-            "unit": "tempC"
+            "value": "ds18b20_tempC",
+            "unit": "ds18b20_tempC"
         }
     ]
 }
