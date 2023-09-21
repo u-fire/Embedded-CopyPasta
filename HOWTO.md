@@ -106,13 +106,13 @@ Hopefully that explained enough to make you (dangerously?) effective at making y
 
 ## Last things
 - Avoid name collisions: use specific class names like sht30 vs sensor
-- No `#ifdef` for different boards. Some examples support multiple boards and variants. That doesn't make for readable code and it is easy to just make another template. ESP32 can have a seperate template, so can ESP866 and RP2040.
+- No `#ifdef` for different boards. Some examples support multiple boards and variants. That doesn't make for readable code and it is easy to just make another template. ESP32 can have a separate template, so can ESP866 and RP2040.
 - Some decisions need to be made like pin numbers. Pick one to ensure it compiles. use `/**/` inline comments to notate it. 
 - Include links to the sketch and sensors is available
 - Make sure `values.units` in the *.copy* files are valid C++ variable names. Name them with avoid name collisions in mind. `sht30_tempC` vs `tempC`. 
 
 ## Submit it all
-You can do it through a PR of this repo, or you can just [email](mailto:justin@microfire.co) it to me if that's easier. 
+You can do it through a PR of this repo, or you can [email](mailto:justin@microfire.co) it to me if that's easier. 
 
 ## A walkthrough
-If you'd just rather a walkthrough, [try this out](WALKTHROUGH.md). 
+If you'd rather a walkthrough, [try this out](WALKTHROUGH.md). 

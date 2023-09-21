@@ -10,7 +10,7 @@ Ever notice that a lot of Arduino code is boilerplate?
 4. Do something in `loop()`
 5. Display or send some data
 
-Embedded CopyPasta makes it easy to do all that automatically. Plus, it will make a PlatformIO project for you, download the libraries needed, and setup the build enviornment. 
+Embedded CopyPasta makes it easy to do all that automatically. Plus, it will make a PlatformIO project for you, download the libraries needed, and setup the build environment. 
 * pick starting templates like InfluxDB, AdafruitIO, or just `Serial.println()`
 * add as many sensors as you want
 * *do what you wanted to do quicker*
@@ -67,7 +67,7 @@ void loop()
 }
 ```
 
-Not bad, right? You might have noticed it said `No board specified to make PlatformIO project. Use -b to pass board identifier`. If you pass a [PlatformIO board identifier](https://docs.platformio.org/en/latest/boards/index.html), it will make and save the code, then make a PlatformIO project. PlatformIO can download the libraries and create the build enviornment automatically for you. 
+Not bad, right? You might have noticed it said `No board specified to make PlatformIO project. Use -b to pass board identifier`. If you pass a [PlatformIO board identifier](https://docs.platformio.org/en/latest/boards/index.html), it will make and save the code, then make a PlatformIO project. PlatformIO can download the libraries and create the build environment automatically for you. 
 
 Enter this `ecp -c copy/dallas_ds18b20.copy -p pasta/print.pasta -o ds18b20 -b uno` and you should see the project created and compiled. If everything worked, you will see `Looks like everything worked, the project is in /[path]/ds18b20`
 
