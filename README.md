@@ -74,7 +74,7 @@ Enter this `ecp -c copy/dallas_ds18b20.copy -p pasta/print.pasta -o ds18b20 -b u
 For this example, you might want to change which pin the sensor is connected to, possible TODOs are marked in the code with /**/ comments. You can add more sensors, remake it using a different template, or just do whatever you wanted to from here. 
 
 ## But what if the sensors/templates I want aren't listed?
-Maybe AI can make them? Until somebody figure it out, you'll have to make the copypasta files on your own. Yes, I know that would take longer than just getting on with your project, but it would be saving time for everyone who comes after you. Or you could bug the sensor manufacturer to make one. 
+Maybe AI can make them? Until somebody figures it out, you'll have to make the copypasta files on your own. Yes, I know that would take longer than just getting on with your project, but it would be saving time for everyone who comes after you. Or you could bug the sensor manufacturer to make one. 
 
 ### Fine, I'll make one
 Awesome! [Read about how to make one here](HOWTO.md), it isn't hard, just some JSON and JavaScript. 
