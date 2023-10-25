@@ -32,7 +32,7 @@ program
     .option("-c, --copy [file/s...]", ".copy data file")
     .option("-o, --out [folder]", "output folder")
     .option("-b, --board [value]", "PlatformIO board identifier")
-    .option("-a, --about", "A blurb about this program, license, etc.")
+    .option("-a, --about", "Copy and paste Arduino libraries and sensors together automatically.")
     .parse(process.argv);
 
 if (options.about) {
