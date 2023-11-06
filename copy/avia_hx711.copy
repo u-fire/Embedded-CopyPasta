@@ -1,0 +1,29 @@
+{
+    "version": "2.0.1",
+    "name": "Avia HX711 (bogde/HX711)",
+    "dependencies": [
+        "bogde/HX711@^0.7.5"
+    ],
+    "include": [
+        "#include <HX711.h>"
+    ],
+    "constructor": [
+        "HX711 loadcell;",
+        "const int LOADCELL_DOUT_PIN = 2;",
+        "const int LOADCELL_SCK_PIN = 3;",
+        "const long LOADCELL_OFFSET = 50682624;",
+        "const long LOADCELL_DIVIDER = 5895655;"
+    ],
+    "setup": [
+        "loadcell.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);",
+        "loadcell.set_scale(LOADCELL_DIVIDER);",
+        "loadcell.set_offset(LOADCELL_OFFSET);"
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "loadcell.get_units(10)",
+            "unit": "loadcell_weight"
+        }
+    ]
+}

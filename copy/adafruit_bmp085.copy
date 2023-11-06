@@ -1,0 +1,36 @@
+{
+    "version": "1.2.2",
+    "name": "Adafruit BMP085",
+    "dependencies": [
+        "adafruit/Adafruit BMP085 Library@^1.2.2"
+    ],
+    "include": [
+        "#include <SPI.h>",
+        "#include <Adafruit_BMP085.h>"
+    ],
+    "constructor": [
+        "Adafruit_BMP085 bmp085;"
+    ],
+    "setup": [
+        "bmp085.begin();"
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "bmp085.readTemperature()",
+            "unit": "bmp085_tempC"
+        },
+        {
+            "value": "(bmp085.readPressure() / 100.0F)",
+            "unit": "bmp085_hPa"
+        },
+        {
+            "value": "bmp085.readAltitude( /* actual sea level pressure in Pascals */ )",
+            "unit": "bmp085_meters"
+        },
+        {
+            "value": "(bmp085.readSealevelPressure() / 100.0F)",
+            "unit": "bmp085_sealevel_hPa"
+        }
+    ]
+}

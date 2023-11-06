@@ -1,0 +1,25 @@
+{
+    "version": "2.0.1",
+    "name": "Microfire Mod-ORP",
+    "dependencies": [
+        "microfire/Microfire Mod-ORP@^2.0.0"
+    ],
+    "include": [
+        "#include <Microfire_Mod-ORP.h>"
+    ],
+    "constructor": [
+        "Microfire::Mod_ORP::i2c orp;"
+    ],
+    "setup": [
+        "orp.begin();"
+    ],
+    "loop": [
+        "orp.measureORP();"
+    ],
+    "values": [
+        {
+            "value": "orp.mV",
+            "unit": "mV"
+        }
+    ]
+}

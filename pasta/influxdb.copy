@@ -1,6 +1,6 @@
 {
     "board": "ESP32",
-    "name": "InfluxDB: Send sensor measurements directly into your InfluxDB instance",
+    "name": "InfluxDB",
     "dependencies": [
         "tobiasschuerg/ESP8266 Influxdb@^3.13.1"
     ],

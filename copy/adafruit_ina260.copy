@@ -1,0 +1,33 @@
+{
+    "version": "1.5.0",
+    "name": "Adafruit INA260",
+    "dependencies": [
+        "adafruit/Adafruit BusIO@^1.14.4",
+        "adafruit/Adafruit INA260 Library@^1.5.0"
+    ],
+    "include": [
+        "#include <Adafruit_Sensor.h>",
+        "#include <Adafruit_INA260.h>"
+    ],
+    "constructor": [
+        "Adafruit_INA260 ina260 = Adafruit_INA260();"
+    ],
+    "setup": [
+        "ina260.begin();"
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "ina260.readCurrent()",
+            "unit": "ina260_mA"
+        },
+        {
+            "value": "ina260.readBusVoltage()",
+            "unit": "ina260_bus_V"
+        },
+        {
+            "value": "ina260.readPower()",
+            "unit": "ina260_current_mW"
+        }
+    ]
+}

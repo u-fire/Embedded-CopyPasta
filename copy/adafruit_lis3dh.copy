@@ -1,0 +1,35 @@
+{
+    "version": "1.2.4",
+    "name": "Adafruit LIS3DH",
+    "dependencies": [
+        "adafruit/Adafruit LIS3DH@^1.2.4"
+    ],
+    "include": [
+        "#include <Adafruit_Sensor.h>",
+        "#include <Adafruit_LIS3DH.h>"
+    ],
+    "constructor": [
+        "Adafruit_LIS3DH lis = Adafruit_LIS3DH();"
+    ],
+    "setup": [
+        "lis.begin(0x18);"
+    ],
+    "loop": [
+        "sensors_event_t lis_event;",
+        "lis.getEvent(&lis_event);"
+    ],
+    "values": [
+        {
+            "value": "lis_event.acceleration.x",
+            "unit": "lis_accel_X_ms2"
+        },
+        {
+            "value": "lis_event.acceleration.y",
+            "unit": "lis_accel_Y_ms2"
+        },
+        {
+            "value": "lis_event.acceleration.z",
+            "unit": "lis_accel_Z_ms2"
+        }
+    ]
+}

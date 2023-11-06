@@ -1,0 +1,27 @@
+{
+    "version": "2.0.5",
+    "name": "Adafruit MCP9808",
+    "dependencies": [
+        "adafruit/Adafruit MCP9808 Library@^2.0.0"
+    ],
+    "include": [
+        "#include <Adafruit_MCP9808.h>"
+    ],
+    "constructor": [
+        "Adafruit_MCP9808 mcp9808 = Adafruit_MCP9808();"
+    ],
+    "setup": [
+        "mcp9808.begin();"
+    ],
+    "loop": [
+        "mcp9808.wake();",
+        "float mcp9808_tempC = mcp9808.readTempC();",
+        "mcp9808.shutdown_wake(1);"
+    ],
+    "values": [
+        {
+            "value": "mcp9808_tempC",
+            "unit": "mcp9808_tempC"
+        }
+    ]
+}

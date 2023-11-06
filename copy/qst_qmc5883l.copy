@@ -1,0 +1,29 @@
+{
+    "version": "1.2.3",
+    "name": "QST QMC5883L (mprograms/QMC5883LCompass)",
+    "dependencies": [
+        "mprograms/QMC5883LCompass@^1.2.3"
+    ],
+    "include": [
+        "#include <QMC5883LCompass.h>"
+    ],
+    "constructor": [
+        "QMC5883LCompass compass;"
+    ],
+    "setup": [
+        "compass.init();"
+    ],
+    "loop": [
+        "compass.read();"
+    ],
+    "values": [
+        {
+            "value": "compass.getAzimuth()",
+            "unit": "qmc_Azimuth"
+        },
+        {
+            "value": "compass.getBearing(compass.getAzimuth())",
+            "unit": "qmc_Bearing"
+        }
+    ]
+}

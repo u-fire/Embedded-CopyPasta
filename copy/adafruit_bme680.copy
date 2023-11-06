@@ -1,0 +1,36 @@
+{
+    "version": "2.0.2",
+    "name": "Adafruit BME680",
+    "dependencies": [
+        "adafruit/Adafruit BME680 Library@^2.0.2"
+    ],
+    "include": [
+        "#include <Adafruit_Sensor.h>",
+        "#include <Adafruit_BME680.h>"
+    ],
+    "constructor": [
+        "Adafruit_BME680 bme680;"
+    ],
+    "setup": [
+        "bme680.begin(); "
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "bme680.readTemperature()",
+            "unit": "bme680_tempC"
+        },
+        {
+            "value": "(bme680.readPressure() / 100.0F)",
+            "unit": "bme680_hPa"
+        },
+        {
+            "value": "bme680.readAltitude( /* sea level pressure */ 1013.25)",
+            "unit": "bme680_meters"
+        },
+        {
+            "value": "(bme680.gas_resistance / 1000.0)",
+            "unit": "bme680_RH"
+        }
+    ]
+}

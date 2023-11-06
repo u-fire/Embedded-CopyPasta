@@ -1,0 +1,25 @@
+{
+    "version": "1.6.0",
+    "name": "Adafruit MAX31865",
+    "dependencies": [
+        "adafruit/Adafruit MAX31865 library@^1.6.0"
+    ],
+    "include": [
+        "#include <SPI.h>",
+        "#include <Wire.h>",
+        "#include <Adafruit_MAX31865.h>"
+    ],
+    "constructor": [
+        "Adafruit_MAX31865 thermo = Adafruit_MAX31865( /* CS */ 10, /* DI */ 11, /* DO */ 12, /* CLK */ 13);"
+    ],
+    "setup": [
+        "thermo.begin(MAX31865_3WIRE /* or MAX31865_4WIRE */ );"
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "thermo.temperature(/* 430.0 for PT100 and 4300.0 for PT1000 */ 430.0, /* 100.0 for PT100, 1000.0 for PT1000 */ 100)",
+            "unit": "max31865_tempC"
+        }
+    ]
+}

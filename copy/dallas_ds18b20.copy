@@ -1,6 +1,6 @@
 {
     "version": "3.11.0",
-    "name": "Dallas DS18B20",
+    "name": "Dallas DS18B20 (milesburton/DallasTemperature)",
     "dependencies": [
         "milesburton/DallasTemperature@^3.11.0",
         "paulstoffregen/OneWire@^2.3.7"

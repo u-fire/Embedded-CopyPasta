@@ -1,0 +1,36 @@
+{
+    "version": "2.2.2",
+    "name": "Adafruit BME280",
+    "dependencies": [
+        "adafruit/Adafruit BME280 Library@^2.2.2"
+    ],
+    "include": [
+        "#include <Adafruit_Sensor.h>",
+        "#include <Adafruit_BME280.h>"
+    ],
+    "constructor": [
+        "Adafruit_BME280 bme280;"
+    ],
+    "setup": [
+        "bme280.begin(); "
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "bme280.readTemperature()",
+            "unit": "bme280_tempC"
+        },
+        {
+            "value": "(bme280.readPressure() / 100.0F)",
+            "unit": "bme280_hPa"
+        },
+        {
+            "value": "bme280.readAltitude( /* sea level pressure */ 1013.25)",
+            "unit": "bme280_meters"
+        },
+        {
+            "value": "bme280.readHumidity()",
+            "unit": "bme280_RH"
+        }
+    ]
+}

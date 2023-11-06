@@ -1,6 +1,6 @@
 {
     "version": "2.0.1",
-    "name": "Microfire_Mod-pH",
+    "name": "Microfire Mod-pH",
     "dependencies": [
         "microfire/Microfire Mod-pH@^2.0.1"
     ],
@@ -19,8 +19,7 @@
     "values": [
         {
             "value": "ph.pH",
-            "unit": "pH",
-            "required": "temperature"
+            "unit": "pH"
         }
     ]
 }

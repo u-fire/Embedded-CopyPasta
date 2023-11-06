@@ -1,0 +1,21 @@
+{
+    "board": "ESP32",
+    "name": "Arduino IoT cloud",
+    "dependencies": [
+        "arduino-libraries/ArduinoIoTCloud@^1.12.1"
+    ],
+    "include": [
+        "#include <ArduinoIoTCloud.h>",
+        "#include <Arduino_ConnectionHandler.h>"
+    ],
+    "constructor": [
+        "#define WIFI_SSID \"your_ssid\"",
+        "#define WIFI_PASS \"your_pass\""
+    ],
+    "setup": [
+        "ArduinoCloud.begin(ArduinoIoTPreferredConnection);",
+        "WiFiConnectionHandler ArduinoIoTPreferredConnection(WIFI_SSID, WIFI_PASS);"
+    ],
+    "loop": [],
+    "values": []
+}

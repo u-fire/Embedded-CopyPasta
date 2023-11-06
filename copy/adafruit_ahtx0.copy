@@ -1,6 +1,6 @@
 {
     "version": "2.0.5",
-    "name": "Adafruit_AHTX0",
+    "name": "Adafruit AHTX0",
     "dependencies": [
         "adafruit/Adafruit AHTX0@^2.0.5"
     ],

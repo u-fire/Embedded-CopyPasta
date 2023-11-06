@@ -1,0 +1,25 @@
+{
+    "version": "2.2.2",
+    "name": "Adafruit MAX31855",
+    "dependencies": [
+        "adafruit/Adafruit MAX31855 library@^1.4.0"
+    ],
+    "include": [
+        "#include <SPI.h>",
+        "#include <Wire.h>",
+        "#include <Adafruit_MAX31855.h>"
+    ],
+    "constructor": [
+        "Adafruit_MAX31855 thermocouple( /* CLK */ 3, /* CS */ 4, /* DO */ 5);"
+    ],
+    "setup": [
+        "thermocouple.begin();"
+    ],
+    "loop": [],
+    "values": [
+        {
+            "value": "thermocouple.readCelsius()",
+            "unit": "max_tempC"
+        }
+    ]
+}

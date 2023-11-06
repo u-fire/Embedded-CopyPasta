@@ -1,0 +1,27 @@
+{
+    "board": "ESP32",
+    "name": "MQTT: Using ArduinoMqttClient Library",
+    "dependencies": [
+        "arduino-libraries/ArduinoMqttClient@^0.1.7"
+    ],
+    "include": [
+        "#include <WiFi.h>",
+        "#include <ArduinoMqttClient.h>"
+    ],
+    "constructor": [
+        "#define WIFI_SSID \"your_ssid\"",
+        "#define WIFI_PASS \"your_pass\"",
+        "#define DEVICE \"ESP32\"",
+        "#define PORT 1883",
+        "#define BROKER \"test.mosquitto.org\"",
+        "WiFiClient wifiClient;",
+        "MqttClient mqttClient(wifiClient);"
+    ],
+    "setup": [
+        "mqttClient.connect(BROKER, PORT);"
+    ],
+    "loop": [
+        "mqttClient.poll();"
+    ],
+    "values": []
+}

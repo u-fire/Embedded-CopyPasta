@@ -3,7 +3,7 @@
 <%-includes[i]%><%}%>
 <% for(var i = 0; i < constructors.length; ++i) {%>
 <%-constructors[i]%><%}%>
-
+    
 void setup()
 {
     Serial.begin(9600);
@@ -22,4 +22,6 @@ void loop()
     LoRa.beginPacket();<% for(var i = 0; i < values.length; ++i) {%>
     LoRa.print(<%-values[i]%>);<%}%>
     LoRa.endPacket();
+
+    delay(1000);
 }

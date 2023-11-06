@@ -1,0 +1,41 @@
+{
+    "version": "2.0.5",
+    "name": "Adafruit INA219",
+    "dependencies": [
+        "adafruit/Adafruit INA219@^1.2.1"
+    ],
+    "include": [
+        "#include <Adafruit_INA219.h>"
+    ],
+    "constructor": [
+        "Adafruit_INA219 ina219;"
+    ],
+    "setup": [
+        "ina219.begin();"
+    ],
+    "loop": [
+        "float loadvoltage = 0.0;"
+    ],
+    "values": [
+        {
+            "value": "ina219.getShuntVoltage_mV()",
+            "unit": "ina219_shunt_mA"
+        },
+        {
+            "value": "ina219.getBusVoltage_V()",
+            "unit": "ina219_bus_V"
+        },
+        {
+            "value": "ina219.getCurrent_mA()",
+            "unit": "ina219_current_mA"
+        },
+        {
+            "value": "ina219.getPower_mW()",
+            "unit": "ina219_power_W"
+        },
+        {
+            "value": "loadvoltage = ina219.getBusVoltage_V() + (ina219.getShuntVoltage_mV() / 1000)",
+            "unit": "ina219_load_V"
+        }
+    ]
+}

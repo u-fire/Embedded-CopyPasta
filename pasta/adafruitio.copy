@@ -1,6 +1,6 @@
 {
     "board": "ESP32",
-    "name": "AdafruitIO: Storage and dashboards",
+    "name": "AdafruitIO",
     "dependencies": [
         "adafruit/Adafruit IO Arduino@^4.2.7"
     ],

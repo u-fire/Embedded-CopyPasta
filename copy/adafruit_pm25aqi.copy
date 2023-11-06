@@ -1,0 +1,72 @@
+{
+    "version": "1.0.6",
+    "name": "Adafruit PM25 AQI",
+    "dependencies": [
+        "adafruit/Adafruit PM25 AQI Sensor@^1.0.6"
+    ],
+    "include": [
+        "#include <SPI.h>",
+        "#include <Adafruit_Sensor.h>",
+        "#include <Adafruit_PM25AQI.h>"
+    ],
+    "constructor": [
+        "Adafruit_PM25AQI aqi = Adafruit_PM25AQI();"
+    ],
+    "setup": [
+        "aqi.begin_I2C();"
+    ],
+    "loop": [
+        "PM25_AQI_Data data;",
+        "aqi.read(&data);"
+    ],
+    "values": [
+        {
+            "value": "data.pm10_standard",
+            "unit": "pm10_standard"
+        },
+        {
+            "value": "data.pm25_standard",
+            "unit": "pm25_standard"
+        },
+        {
+            "value": "data.pm100_standard",
+            "unit": "pm100_standard"
+        },
+        {
+            "value": "data.pm10_env",
+            "unit": "pm10_environmental"
+        },
+        {
+            "value": "data.pm25_env",
+            "unit": "pm25_environmental"
+        },
+        {
+            "value": "data.pm100_env",
+            "unit": "pm100_environmental"
+        },
+        {
+            "value": "data.particles_03um",
+            "unit": "particles_03um"
+        },
+        {
+            "value": "data.particles_05um",
+            "unit": "particles_05um"
+        },
+        {
+            "value": "data.particles_10um",
+            "unit": "particles_03um"
+        },
+        {
+            "value": "data.particles_25um",
+            "unit": "particles_25um"
+        },
+        {
+            "value": "data.particles_50um",
+            "unit": "particles_50um"
+        },
+        {
+            "value": "data.particles_100um",
+            "unit": "particles_100um"
+        }
+    ]
+}

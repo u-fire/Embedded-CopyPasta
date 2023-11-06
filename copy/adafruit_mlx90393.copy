@@ -1,0 +1,33 @@
+{
+    "version": "2.0.3",
+    "name": "Adafruit MLX90393 ",
+    "dependencies": [
+        "adafruit/Adafruit MLX90393@^2.0.3"
+    ],
+    "include": [
+        "#include <Adafruit_MLX90393.h>"
+    ],
+    "constructor": [
+        "Adafruit_MLX90393 mlx90393 = Adafruit_MLX90393();"
+    ],
+    "setup": [
+        "mlx90393.begin_I2C();"
+    ],
+    "loop": [
+        "float mlx90393_x, mlx90393_y, mlx90393_z = mlx90393.readData(&mlx90393_x, &mlx90393_y, &mlx90393_z);"
+    ],
+    "values": [
+        {
+            "value": "mlx90393_x",
+            "unit": "x_uT"
+        },
+        {
+            "value": "mlx90393_y",
+            "unit": "y_uT"
+        },
+        {
+            "value": "mlx90393_z",
+            "unit": "z_uT"
+        }
+    ]
+}

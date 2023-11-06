@@ -1,6 +1,6 @@
 {
     "version": "2.0.0",
-    "name": "Microfire_Mod-EC",
+    "name": "Microfire Mod-EC",
     "dependencies": [
         "microfire/Microfire Mod-EC@^2.0.0"
     ],

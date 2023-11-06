@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "name": "Microfire_SHT3x",
+    "name": "Microfire SHT3x",
     "dependencies": [
         "u-fire/Microfire_SHT3x@^1.0.0"
     ],
@@ -27,7 +27,7 @@
         },
         {
             "value": "sht30.vpd_kPa",
-            "unit": "VPD kPa"
+            "unit": "VPD_kPa"
         }
     ]
 }

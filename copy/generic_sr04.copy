@@ -1,0 +1,21 @@
+{
+    "version": "1.9.7",
+    "name": "Generic Ultrasonic Ping (teckel12/NewPing)",
+    "dependencies": [
+        "teckel12/NewPing@^1.9.7"
+    ],
+    "include": [
+        "#include <NewPing.h>"
+    ],
+    "constructor": [
+        "NewPing sonar( /* TRIGGER_PIN */ 2, /* ECHO_PIN */ 3, /* MAX_DISTANCE_CM */ 200);"
+    ],
+    "setup": [],
+    "loop": [],
+    "values": [
+        {
+            "value": "sonar.ping_cm()",
+            "unit": "sonar_cm"
+        }
+    ]
+}

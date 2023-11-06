@@ -1,0 +1,55 @@
+{
+    "version": "2.2.4",
+    "name": "Adafruit MPU6050",
+    "dependencies": [
+        "adafruit/Adafruit MPU6050@^2.2.4"
+    ],
+    "include": [
+        "#include <Adafruit_MPU6050.h>"
+    ],
+    "constructor": [
+        "Adafruit_MPU6050 mpu;",
+        "Adafruit_Sensor *mpu_temp, *mpu_accel, *mpu_gyro;"
+    ],
+    "setup": [
+        "mpu.begin();"
+    ],
+    "loop": [
+        "sensors_event_t accel;",
+        "sensors_event_t gyro;",
+        "sensors_event_t temp;",
+        "mpu_temp->getEvent(&temp);",
+        "mpu_accel->getEvent(&accel);",
+        "mpu_gyro->getEvent(&gyro);"
+    ],
+    "values": [
+        {
+            "value": "accel.acceleration.x",
+            "unit": "mpu_accel_X_ms2"
+        },
+        {
+            "value": "accel.acceleration.y",
+            "unit": "mpu_accel_Y_ms2"
+        },
+        {
+            "value": "accel.acceleration.z",
+            "unit": "mpu_accel_Z_ms2"
+        },
+        {
+            "value": "gyro.gyro.x",
+            "unit": "mpu_gyro_X_rad"
+        },
+        {
+            "value": "gyro.gyro.y",
+            "unit": "mpu_gyro_Y_rad"
+        },
+        {
+            "value": "gyro.gyro.z",
+            "unit": "mpu_gyro_Z_rad"
+        },
+        {
+            "value": "temp.temperature",
+            "unit": "mpu_tempC"
+        }
+    ]
+}
