@@ -8,7 +8,6 @@
 // You should have received a copy of the GNU General Public License along with Embedded CopyPasta. If not, see 
 // <https://www.gnu.org/licenses/>.
 
-const ejs = require('ejs');
 const { Command } = require("commander");
 const fs = require('fs');
 const program = new Command();
@@ -28,7 +27,7 @@ const Handlebars = require("handlebars");
 console.log(chalk.bold.white(figlet.textSync("Embedded CopyPasta", {font: "Contessa"})));
 console.log("(C) Microfire LLC 2024 (https://microfire.co)\n")
 program
-    .version("0.1.0")
+    .version("0.2.0")
     .description("Embedded CopyPasta")
     .option("-t, --template  [file]", ".handlebar Template file")
     .option("-j, --json [file/s...]", ".json data file")

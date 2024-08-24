@@ -25,7 +25,7 @@ Assuming you have a working installation of Embedded CopyPasta 🍝, let's get s
     `values[0].values` is the name the variable we declared in our loop statement. `values[0].unit` doesn't have to be the same, but it will be used as a variable in the *.handlebars* file. Note, there are no semicolons, so `dht_humidity` can be used in something like `Serial.println(dht_humidity);`. 
 
 2. We can run this through with this command
-`ecp.js -j copy/adafruit_dht.json -t pasta/print.handlebars -o dht` and it should render this:
+`node ecp.js -j copy/adafruit_dht.json -t pasta/print.handlebars -o dht` and it should render this:
 
 ```cpp
 #include <DHT.h>

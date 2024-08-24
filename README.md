@@ -24,21 +24,11 @@ npm install
 node ecp -h
 ```
 
-Or you can download this repo and use the packaged binary version:
-* Windows: ecp.exe
-* Linux: ecp
-* Mac: ecp-macos <- *untested* ⚠️ 
-
-### Now what?
-1. Open a terminal and `cd` into the directory with ecp in it
-2. Run `ecp -h` to view the command-line options and verify it runs
-3. [Install PlatformIO](https://docs.platformio.org/en/latest/core/installation/index.html) if you want it to make your project files
-
 ### Want an example?
 Let's say we have a DS18B20 temperature sensor and we just want to see some data from it.
 
 1. Open a terminal and `cd` into the directory with ecp in it
-2. type `ecp -j json/dallas_ds18b20.json -t templates/print.handlebars -o ds18b20`
+2. type `node ecp -j json/dallas_ds18b20.json -t templates/print.handlebars -o ds18b20`
 
 You should see the following:
 
@@ -69,7 +59,7 @@ void loop()
 
 Not bad, right? You might have noticed it said `No board specified to make PlatformIO project. Use -b to pass board identifier`. If you pass a [PlatformIO board identifier](https://docs.platformio.org/en/latest/boards/index.html), it will make and save the code, then make a PlatformIO project. **PlatformIO can download the libraries and create the build environment automatically for you. **
 
-Enter this `ecp -j json/dallas_ds18b20.json -t templates/print.handlebars -o ds18b20 -b uno` and you should see the project created and compiled. If everything worked, you will see `Looks like everything worked, the project is in /[path]/ds18b20`
+Enter this `node ecp -j json/dallas_ds18b20.json -t templates/print.handlebars -o ds18b20 -b uno` and you should see the project created and compiled. If everything worked, you will see `Looks like everything worked, the project is in /[path]/ds18b20`
 
 For this example, you might want to change which pin the sensor is connected to, possible TODOs are marked in the code with /**/ comments. You can add more sensors, remake it using a different template, or just do whatever you wanted to from here. 
 
