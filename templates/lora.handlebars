@@ -1,0 +1,35 @@
+// based on https://github.com/sandeepmistry/arduino-LoRa/blob/master/examples/LoRaSender/LoRaSender.ino 
+{{#each includes}}
+{{{this}}}
+{{/each}}
+
+{{#each constructors}}
+{{{this}}}
+{{/each}}
+    
+void setup()
+{
+    Serial.begin(9600);
+    if (!LoRa.begin(915E6)) {
+        Serial.println("Starting LoRa failed!");
+        while (1);
+    }
+    {{#each setups}}
+    {{{this}}}
+	{{/each}}
+}
+
+void loop()
+{
+    {{#each loops}}
+    {{{this}}}
+	{{/each}}
+
+    {{#each units}}
+    LoRa.beginPacket();
+    LoRa.print((String){{{this}}} + ":" + {{{lookup ../values @index}}})
+    LoRa.endPacket();
+    {{/each}}
+
+    delay(1000);
+}

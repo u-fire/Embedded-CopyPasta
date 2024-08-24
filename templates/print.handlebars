@@ -1,0 +1,28 @@
+{{#each includes}}
+{{{this}}}
+{{/each}}
+
+{{#each constructors}}
+{{{this}}}
+{{/each}}
+
+void setup()
+{
+	{{#each setups}}
+    {{{this}}}
+	{{/each}}
+}
+
+
+void loop()
+{
+    {{#each loops}}
+    {{{this}}}
+	{{/each}}
+
+    {{#each units}}
+    Serial.println((String)"{{{this}}}: " + {{{lookup ../values @index}}});
+    {{/each}}
+    
+    delay(1000);
+}

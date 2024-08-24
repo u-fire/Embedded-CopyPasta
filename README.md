@@ -38,7 +38,7 @@ Or you can download this repo and use the packaged binary version:
 Let's say we have a DS18B20 temperature sensor and we just want to see some data from it.
 
 1. Open a terminal and `cd` into the directory with ecp in it
-2. type `ecp -c copy/dallas_ds18b20.copy -p pasta/print.pasta -o ds18b20`
+2. type `ecp -j json/dallas_ds18b20.json -t templates/print.handlebars -o ds18b20`
 
 You should see the following:
 
@@ -67,14 +67,14 @@ void loop()
 }
 ```
 
-Not bad, right? You might have noticed it said `No board specified to make PlatformIO project. Use -b to pass board identifier`. If you pass a [PlatformIO board identifier](https://docs.platformio.org/en/latest/boards/index.html), it will make and save the code, then make a PlatformIO project. PlatformIO can download the libraries and create the build environment automatically for you. 
+Not bad, right? You might have noticed it said `No board specified to make PlatformIO project. Use -b to pass board identifier`. If you pass a [PlatformIO board identifier](https://docs.platformio.org/en/latest/boards/index.html), it will make and save the code, then make a PlatformIO project. **PlatformIO can download the libraries and create the build environment automatically for you. **
 
-Enter this `ecp -c copy/dallas_ds18b20.copy -p pasta/print.pasta -o ds18b20 -b uno` and you should see the project created and compiled. If everything worked, you will see `Looks like everything worked, the project is in /[path]/ds18b20`
+Enter this `ecp -j json/dallas_ds18b20.json -t templates/print.handlebars -o ds18b20 -b uno` and you should see the project created and compiled. If everything worked, you will see `Looks like everything worked, the project is in /[path]/ds18b20`
 
 For this example, you might want to change which pin the sensor is connected to, possible TODOs are marked in the code with /**/ comments. You can add more sensors, remake it using a different template, or just do whatever you wanted to from here. 
 
 ## But what if the sensors/templates I want aren't listed?
-Maybe AI can make them? Until somebody figures it out, you'll have to make the copypasta files on your own. Yes, I know that would take longer than just getting on with your project, but it would be saving time for everyone who comes after you. Or you could bug the sensor manufacturer to make one. 
+Maybe AI can make them? Until somebody figures it out, you'll have to make the files on your own. Yes, I know that would take longer than just getting on with your project, but it would be saving time for everyone who comes after you. Or you could bug the sensor manufacturer to make one. 
 
 ### Fine, I'll make one
 Awesome! [Read about how to make one here](HOWTO.md), it isn't hard, just some JSON and JavaScript. 

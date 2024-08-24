@@ -1,6 +1,7 @@
 // based on https://github.com/tobiasschuerg/InfluxDB-Client-for-Arduino/blob/master/examples/BasicWrite/BasicWrite.ino
-<% for(var i = 0; i < includes.length; ++i) {%>
-<%-includes[i]%><%}%>
+{{#each includes}}
+{{{this}}}
+{{/each}}
 
 // Device name
 #define DEVICE "ESP32"
@@ -17,8 +18,9 @@
 #define INFLUXDB_ORG "org"
 // InfluxDB 2 bucket name (Use: InfluxDB UI -> Load Data -> Buckets)
 #define INFLUXDB_BUCKET "bucket"
-<% for(var i = 0; i < constructors.length; ++i) {%>
-<%-constructors[i]%><%}%>
+{{#each constructors}}
+{{{this}}}
+{{/each}}
 
 // Data point
 Point sensor("sensor");
@@ -49,20 +51,24 @@ void setup()
         Serial.println(client.getLastErrorMessage());
     }
 
-    <% for(var i = 0; i < setups.length; ++i) {%>
-    <%-setups[i]%><%}%>
+    {{#each setups}}
+    {{{this}}}
+	{{/each}}
 }
 
 void loop()
-{<% for(var i = 0; i < loops.length; ++i) {%>
-    <%-loops[i]%><%}%>
+{
+    {{#each loops}}
+    {{{this}}}
+	{{/each}}
 
     // Store measured value into point
     sensor.clearFields();
-    <% for(var i = 0; i < values.length; ++i) {%>
-    sensor.addField("<%-units[i]%>", <%-values[i]%>);<%}%>
+    {{#each units}}
+    sensor.addField("{{{this}}}", {{{lookup ../values @index}}});
+    {{/each}}
 
-    // Print what are we exactly writing
+    // Print what are we writing
     Serial.print("Writing: ");
     Serial.println(client.pointToLineProtocol(sensor));
     // If no Wifi signal, try to reconnect it

@@ -1,0 +1,47 @@
+// based on https://github.com/adafruit/Adafruit_IO_Arduino/tree/master/examples/adafruitio_00_publish
+{{#each includes}}
+{{{this}}}
+{{/each}}
+
+{{#each constructors}}
+{{{this}}}
+{{/each}}
+
+{{#each units}}
+AdafruitIO_Feed *{{{this}}} = io.feed("{{{this}}}");
+{{/each}}
+
+void setup()
+{
+    Serial.begin(9600);
+    Serial.print("Connecting to Adafruit IO");
+
+    // connect to io.adafruit.com
+    io.connect();
+
+    // wait for a connection
+    while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+    }
+
+    // we are connected
+    Serial.println();
+    Serial.println(io.statusText());
+    {{#each setups}}
+    {{{this}}}
+	{{/each}}
+}
+
+void loop()
+{
+    {{#each loops}}
+    {{{this}}}
+	{{/each}}
+
+    {{#each units}}
+    {{{this}}}->save({{{lookup ../values @index}}});
+    {{/each}}
+    
+    delay(3000);
+}

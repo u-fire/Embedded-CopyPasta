@@ -4,7 +4,9 @@
     "dependencies": [],
     "include": [],
     "constructor": [],
-    "setup": [],
+    "setup": [
+        "Serial.begin(115200)"
+    ],
     "loop": [],
     "values": []
 }

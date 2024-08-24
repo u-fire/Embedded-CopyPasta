@@ -1,0 +1,43 @@
+// based on https://github.com/arduino-libraries/ArduinoIoTCloud/blob/master/examples/ArduinoIoTCloud-Basic/ArduinoIoTCloud-Basic.ino
+{{#each includes}}
+{{{this}}}
+{{/each}}
+
+{{#each constructors}}
+{{{this}}}
+{{/each}}
+
+{{#each units}}
+float {{{this}}};
+{{/each}}
+
+void setup()
+{
+    Serial.begin(9600);
+
+    {{#each setups}}
+    {{{this}}}
+	{{/each}}
+
+    {{#each units}}
+    ArduinoCloud.addProperty({{{this}}}, READ, ON_CHANGE);
+    {{/each}}
+
+    setDebugMessageLevel(DBG_INFO);
+    ArduinoCloud.printDebugInfo();
+}
+
+void loop()
+{
+    
+    {{#each loops}}
+    {{{this}}}
+	{{/each}}
+
+    {{#each units}}
+    {{{this}}} = {{{lookup ../values @index}}};
+    {{/each}}
+
+    ArduinoCloud.update();
+    delay(10000);
+}
