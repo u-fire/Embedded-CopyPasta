@@ -67,7 +67,7 @@ For this example, you might want to change which pin the sensor is connected to,
 Maybe AI can make them? Until somebody figures it out, you'll have to make the files on your own. Yes, I know that would take longer than just getting on with your project, but it would be saving time for everyone who comes after you. Or you could bug the sensor manufacturer to make one. 
 
 ### Fine, I'll make one
-Awesome! [Read about how to make one here](HOWTO.md), it isn't hard, just some JSON and JavaScript. 
+Awesome! [Read about how to make one here](HOWTO.md), it isn't hard, just some JSON and Handlebar templates. 
 
 
 
